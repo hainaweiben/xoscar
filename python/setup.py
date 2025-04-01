@@ -91,6 +91,10 @@ if os.environ.get("CYTHON_TRACE"):
 if sys.version_info >= (3, 11):
     define_macros.append(("CYTHON_FAST_THREAD_STATE", "0"))
 
+# Ensure metadata is correctly set for Python 3.12+
+if sys.version_info >= (3, 12):
+    os.environ["SETUPTOOLS_ENABLE_FEATURES"] = "legacy-editable"
+
 cy_extension_kw = {
     'define_macros': define_macros,
 }
