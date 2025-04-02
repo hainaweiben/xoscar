@@ -382,6 +382,7 @@ class CMakeBuild(build_ext):
 
 
 setup_options = dict(
+    name="test-xoscar",
     version=versioneer.get_version(),
     ext_modules=extensions + [XoscarCmakeExtension("xoscar_pygloo")],
     cmdclass={"build_ext": CMakeBuild},
